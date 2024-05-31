@@ -1,0 +1,18 @@
+<footer class="footer" [ngClass]="{hidden: noTodosClass()}">
+  <span class="todo-count">
+    <strong>{{ activeCount() }}</strong>
+    {{ itemsLeftText() }}
+  </span>
+  <ul class="filters">
+    @for (filterItem of filterTabs; track $index) {
+      <li class="filters__item">
+        <a class="filters__item-type"
+           href="/"
+           [ngClass]="{selected: filter() === filterItem.type}"
+           (click)="changeFilter($event, filterItem.type)">
+          {{ filterItem.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</footer>

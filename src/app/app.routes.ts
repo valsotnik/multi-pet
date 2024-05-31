@@ -13,7 +13,7 @@ export const routes: Routes = [
   {
     path: 'todo',
     loadChildren: () =>
-      import('./todo-list/todo-list.routing').then(m => m.TODO_LIST_ROUTES),
+      import('./todos/todos.routing').then(m => m.TODO_LIST_ROUTES),
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
